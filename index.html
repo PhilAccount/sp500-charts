@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Graphiques S&P500</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f5f5f5;
+    }
+    h1 { text-align: center; }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+    .gallery img {
+      max-width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: white;
+      padding: 5px;
+    }
+    .gallery div {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>📊 Graphiques S&P500 (MA100 & MA200)</h1>
+  <div class="gallery">
+    <!-- Ici on insère automatiquement les images -->
+    <script>
+      const images = [
+        // ⚠️ Mets ici la liste de tes PNG
+        "AAPL_Apple Inc..png",
+        "MSFT_Microsoft.png",
+        "GOOG_Alphabet Inc. (Class C).png"
+      ];
+      const gallery = document.querySelector(".gallery");
+      images.forEach(img => {
+        const div = document.createElement("div");
+        div.innerHTML = `<img src="${img}" alt="${img}"><br>${img}`;
+        gallery.appendChild(div);
+      });
+    </script>
+  </div>
+</body>
+</html>
