@@ -2,576 +2,536 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Galerie S&P 500</title>
+  <title>Graphiques S&P 500</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-    }
-    .gallery img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-    /* Lightbox (image en grand) */
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.8);
-      justify-content: center;
-      align-items: center;
-    }
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
-    }
+    body { font-family: Arial; background: #f4f4f4; margin: 0; padding: 20px; }
+    h1 { text-align: center; margin-bottom: 30px; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+    .gallery img { width: 100%; height: auto; border-radius: 8px; cursor: pointer; transition: transform 0.2s; }
+    .gallery img:hover { transform: scale(1.05); }
+    .lightbox { display: none; position: fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background: rgba(0,0,0,0.8); justify-content:center; align-items:center; }
+    .lightbox img { max-width:90%; max-height:90%; border-radius:10px; }
   </style>
 </head>
 <body>
   <h1>Graphiques S&P 500</h1>
   <div class="gallery">
-    <img src="/AAPL_Apple Inc..png" alt="AAPL_Apple Inc..png">
-    <img src="/ABBV_AbbVie.png" alt="ABBV_AbbVie.png">
-    <img src="/ABNB_Airbnb.png" alt="ABNB_Airbnb.png">
-    <img src="/ABT_Abbott Laboratories.png" alt="ABT_Abbott Laboratories.png">
-    <img src="/ACGL_Arch Capital Group.png" alt="ACGL_Arch Capital Group.png">
-    <img src="/ACN_Accenture.png" alt="ACN_Accenture.png">
-    <img src="/ADBE_Adobe Inc..png" alt="ADBE_Adobe Inc..png">
-    <img src="/ADI_Analog Devices.png" alt="ADI_Analog Devices.png">
-    <img src="/ADM_Archer Daniels Midland.png" alt="ADM_Archer Daniels Midland.png">
-    <img src="/ADP_Automatic Data Processing.png" alt="ADP_Automatic Data Processing.png">
-    <img src="/ADSK_Autodesk.png" alt="ADSK_Autodesk.png">
-    <img src="/AEE_Ameren.png" alt="AEE_Ameren.png">
-    <img src="/AEP_American Electric Power.png" alt="AEP_American Electric Power.png">
-    <img src="/AES_AES Corporation.png" alt="AES_AES Corporation.png">
-    <img src="/AFL_Aflac.png" alt="AFL_Aflac.png">
-    <img src="/AIG_American International Group.png" alt="AIG_American International Group.png">
-    <img src="/AIZ_Assurant.png" alt="AIZ_Assurant.png">
-    <img src="/AJG_Arthur J. Gallagher & Co..png" alt="AJG_Arthur J. Gallagher & Co..png">
-    <img src="/AKAM_Akamai Technologies.png" alt="AKAM_Akamai Technologies.png">
-    <img src="/ALB_Albemarle Corporation.png" alt="ALB_Albemarle Corporation.png">
-    <img src="/ALGN_Align Technology.png" alt="ALGN_Align Technology.png">
-    <img src="/ALLE_Allegion.png" alt="ALLE_Allegion.png">
-    <img src="/ALL_Allstate.png" alt="ALL_Allstate.png">
-    <img src="/AMAT_Applied Materials.png" alt="AMAT_Applied Materials.png">
-    <img src="/AMCR_Amcor.png" alt="AMCR_Amcor.png">
-    <img src="/AMD_Advanced Micro Devices.png" alt="AMD_Advanced Micro Devices.png">
-    <img src="/AME_Ametek.png" alt="AME_Ametek.png">
-    <img src="/AMGN_Amgen.png" alt="AMGN_Amgen.png">
-    <img src="/AMP_Ameriprise Financial.png" alt="AMP_Ameriprise Financial.png">
-    <img src="/AMT_American Tower.png" alt="AMT_American Tower.png">
-    <img src="/AMZN_Amazon.png" alt="AMZN_Amazon.png">
-    <img src="/ANET_Arista Networks.png" alt="ANET_Arista Networks.png">
-    <img src="/AON_Aon plc.png" alt="AON_Aon plc.png">
-    <img src="/AOS_A. O. Smith.png" alt="AOS_A. O. Smith.png">
-    <img src="/APA_APA Corporation.png" alt="APA_APA Corporation.png">
-    <img src="/APD_Air Products.png" alt="APD_Air Products.png">
-    <img src="/APH_Amphenol.png" alt="APH_Amphenol.png">
-    <img src="/APO_Apollo Global Management.png" alt="APO_Apollo Global Management.png">
-    <img src="/APTV_Aptiv.png" alt="APTV_Aptiv.png">
-    <img src="/ARE_Alexandria Real Estate Equities.png" alt="ARE_Alexandria Real Estate Equities.png">
-    <img src="/ATO_Atmos Energy.png" alt="ATO_Atmos Energy.png">
-    <img src="/AVB_AvalonBay Communities.png" alt="AVB_AvalonBay Communities.png">
-    <img src="/AVGO_Broadcom.png" alt="AVGO_Broadcom.png">
-    <img src="/AVY_Avery Dennison.png" alt="AVY_Avery Dennison.png">
-    <img src="/AWK_American Water Works.png" alt="AWK_American Water Works.png">
-    <img src="/AXON_Axon Enterprise.png" alt="AXON_Axon Enterprise.png">
-    <img src="/AXP_American Express.png" alt="AXP_American Express.png">
-    <img src="/AZO_AutoZone.png" alt="AZO_AutoZone.png">
-    <img src="/A_Agilent Technologies.png" alt="A_Agilent Technologies.png">
-    <img src="/BAC_Bank of America.png" alt="BAC_Bank of America.png">
-    <img src="/BALL_Ball Corporation.png" alt="BALL_Ball Corporation.png">
-    <img src="/BAX_Baxter International.png" alt="BAX_Baxter International.png">
-    <img src="/BA_Boeing.png" alt="BA_Boeing.png">
-    <img src="/BBY_Best Buy.png" alt="BBY_Best Buy.png">
-    <img src="/BDX_Becton Dickinson.png" alt="BDX_Becton Dickinson.png">
-    <img src="/BEN_Franklin Resources.png" alt="BEN_Franklin Resources.png">
-    <img src="/BG_Bunge Global.png" alt="BG_Bunge Global.png">
-    <img src="/BIIB_Biogen.png" alt="BIIB_Biogen.png">
-    <img src="/BKNG_Booking Holdings.png" alt="BKNG_Booking Holdings.png">
-    <img src="/BKR_Baker Hughes.png" alt="BKR_Baker Hughes.png">
-    <img src="/BK_BNY Mellon.png" alt="BK_BNY Mellon.png">
-    <img src="/BLDR_Builders FirstSource.png" alt="BLDR_Builders FirstSource.png">
-    <img src="/BLK_BlackRock.png" alt="BLK_BlackRock.png">
-    <img src="/BMY_Bristol Myers Squibb.png" alt="BMY_Bristol Myers Squibb.png">
-    <img src="/BRO_Brown & Brown.png" alt="BRO_Brown & Brown.png">
-    <img src="/BR_Broadridge Financial Solutions.png" alt="BR_Broadridge Financial Solutions.png">
-    <img src="/BSX_Boston Scientific.png" alt="BSX_Boston Scientific.png">
-    <img src="/BXP_BXP, Inc..png" alt="BXP_BXP, Inc..png">
-    <img src="/BX_Blackstone Inc..png" alt="BX_Blackstone Inc..png">
-    <img src="/CAG_Conagra Brands.png" alt="CAG_Conagra Brands.png">
-    <img src="/CAH_Cardinal Health.png" alt="CAH_Cardinal Health.png">
-    <img src="/CARR_Carrier Global.png" alt="CARR_Carrier Global.png">
-    <img src="/CAT_Caterpillar Inc..png" alt="CAT_Caterpillar Inc..png">
-    <img src="/CBOE_Cboe Global Markets.png" alt="CBOE_Cboe Global Markets.png">
-    <img src="/CBRE_CBRE Group.png" alt="CBRE_CBRE Group.png">
-    <img src="/CB_Chubb Limited.png" alt="CB_Chubb Limited.png">
-    <img src="/CCI_Crown Castle.png" alt="CCI_Crown Castle.png">
-    <img src="/CCL_Carnival.png" alt="CCL_Carnival.png">
-    <img src="/CDNS_Cadence Design Systems.png" alt="CDNS_Cadence Design Systems.png">
-    <img src="/CDW_CDW Corporation.png" alt="CDW_CDW Corporation.png">
-    <img src="/CEG_Constellation Energy.png" alt="CEG_Constellation Energy.png">
-    <img src="/CFG_Citizens Financial Group.png" alt="CFG_Citizens Financial Group.png">
-    <img src="/CF_CF Industries.png" alt="CF_CF Industries.png">
-    <img src="/CHD_Church & Dwight.png" alt="CHD_Church & Dwight.png">
-    <img src="/CHRW_C.H. Robinson.png" alt="CHRW_C.H. Robinson.png">
-    <img src="/CHTR_Charter Communications.png" alt="CHTR_Charter Communications.png">
-    <img src="/CINF_Cincinnati Financial.png" alt="CINF_Cincinnati Financial.png">
-    <img src="/CI_Cigna.png" alt="CI_Cigna.png">
-    <img src="/CLX_Clorox.png" alt="CLX_Clorox.png">
-    <img src="/CL_Colgate-Palmolive.png" alt="CL_Colgate-Palmolive.png">
-    <img src="/CMCSA_Comcast.png" alt="CMCSA_Comcast.png">
-    <img src="/CME_CME Group.png" alt="CME_CME Group.png">
-    <img src="/CMG_Chipotle Mexican Grill.png" alt="CMG_Chipotle Mexican Grill.png">
-    <img src="/CMI_Cummins.png" alt="CMI_Cummins.png">
-    <img src="/CMS_CMS Energy.png" alt="CMS_CMS Energy.png">
-    <img src="/CNC_Centene Corporation.png" alt="CNC_Centene Corporation.png">
-    <img src="/CNP_CenterPoint Energy.png" alt="CNP_CenterPoint Energy.png">
-    <img src="/COF_Capital One.png" alt="COF_Capital One.png">
-    <img src="/COIN_Coinbase.png" alt="COIN_Coinbase.png">
-    <img src="/COO_Cooper Companies (The).png" alt="COO_Cooper Companies (The).png">
-    <img src="/COP_ConocoPhillips.png" alt="COP_ConocoPhillips.png">
-    <img src="/COR_Cencora.png" alt="COR_Cencora.png">
-    <img src="/COST_Costco.png" alt="COST_Costco.png">
-    <img src="/CPAY_Corpay.png" alt="CPAY_Corpay.png">
-    <img src="/CPB_Campbell's Company (The).png" alt="CPB_Campbell's Company (The).png">
-    <img src="/CPRT_Copart.png" alt="CPRT_Copart.png">
-    <img src="/CPT_Camden Property Trust.png" alt="CPT_Camden Property Trust.png">
-    <img src="/CRL_Charles River Laboratories.png" alt="CRL_Charles River Laboratories.png">
-    <img src="/CRM_Salesforce.png" alt="CRM_Salesforce.png">
-    <img src="/CRWD_CrowdStrike.png" alt="CRWD_CrowdStrike.png">
-    <img src="/CSCO_Cisco.png" alt="CSCO_Cisco.png">
-    <img src="/CSGP_CoStar Group.png" alt="CSGP_CoStar Group.png">
-    <img src="/CSX_CSX Corporation.png" alt="CSX_CSX Corporation.png">
-    <img src="/CTAS_Cintas.png" alt="CTAS_Cintas.png">
-    <img src="/CTRA_Coterra.png" alt="CTRA_Coterra.png">
-    <img src="/CTSH_Cognizant.png" alt="CTSH_Cognizant.png">
-    <img src="/CTVA_Corteva.png" alt="CTVA_Corteva.png">
-    <img src="/CVS_CVS Health.png" alt="CVS_CVS Health.png">
-    <img src="/CVX_Chevron Corporation.png" alt="CVX_Chevron Corporation.png">
-    <img src="/CZR_Caesars Entertainment.png" alt="CZR_Caesars Entertainment.png">
-    <img src="/C_Citigroup.png" alt="C_Citigroup.png">
-    <img src="/DAL_Delta Air Lines.png" alt="DAL_Delta Air Lines.png">
-    <img src="/DASH_DoorDash.png" alt="DASH_DoorDash.png">
-    <img src="/DAY_Dayforce.png" alt="DAY_Dayforce.png">
-    <img src="/DDOG_Datadog.png" alt="DDOG_Datadog.png">
-    <img src="/DD_DuPont.png" alt="DD_DuPont.png">
-    <img src="/DECK_Deckers Brands.png" alt="DECK_Deckers Brands.png">
-    <img src="/DELL_Dell Technologies.png" alt="DELL_Dell Technologies.png">
-    <img src="/DE_Deere & Company.png" alt="DE_Deere & Company.png">
-    <img src="/DGX_Quest Diagnostics.png" alt="DGX_Quest Diagnostics.png">
-    <img src="/DG_Dollar General.png" alt="DG_Dollar General.png">
-    <img src="/DHI_D. R. Horton.png" alt="DHI_D. R. Horton.png">
-    <img src="/DHR_Danaher Corporation.png" alt="DHR_Danaher Corporation.png">
-    <img src="/DIS_Walt Disney Company (The).png" alt="DIS_Walt Disney Company (The).png">
-    <img src="/DLR_Digital Realty.png" alt="DLR_Digital Realty.png">
-    <img src="/DLTR_Dollar Tree.png" alt="DLTR_Dollar Tree.png">
-    <img src="/DOC_Healthpeak Properties.png" alt="DOC_Healthpeak Properties.png">
-    <img src="/DOV_Dover Corporation.png" alt="DOV_Dover Corporation.png">
-    <img src="/DOW_Dow Inc..png" alt="DOW_Dow Inc..png">
-    <img src="/DPZ_Domino's.png" alt="DPZ_Domino's.png">
-    <img src="/DRI_Darden Restaurants.png" alt="DRI_Darden Restaurants.png">
-    <img src="/DTE_DTE Energy.png" alt="DTE_DTE Energy.png">
-    <img src="/DUK_Duke Energy.png" alt="DUK_Duke Energy.png">
-    <img src="/DVA_DaVita.png" alt="DVA_DaVita.png">
-    <img src="/DVN_Devon Energy.png" alt="DVN_Devon Energy.png">
-    <img src="/DXCM_Dexcom.png" alt="DXCM_Dexcom.png">
-    <img src="/D_Dominion Energy.png" alt="D_Dominion Energy.png">
-    <img src="/EA_Electronic Arts.png" alt="EA_Electronic Arts.png">
-    <img src="/EBAY_eBay Inc..png" alt="EBAY_eBay Inc..png">
-    <img src="/ECL_Ecolab.png" alt="ECL_Ecolab.png">
-    <img src="/ED_Consolidated Edison.png" alt="ED_Consolidated Edison.png">
-    <img src="/EFX_Equifax.png" alt="EFX_Equifax.png">
-    <img src="/EG_Everest Group.png" alt="EG_Everest Group.png">
-    <img src="/EIX_Edison International.png" alt="EIX_Edison International.png">
-    <img src="/ELV_Elevance Health.png" alt="ELV_Elevance Health.png">
-    <img src="/EL_Estée Lauder Companies (The).png" alt="EL_Estée Lauder Companies (The).png">
-    <img src="/EMN_Eastman Chemical Company.png" alt="EMN_Eastman Chemical Company.png">
-    <img src="/EMR_Emerson Electric.png" alt="EMR_Emerson Electric.png">
-    <img src="/ENPH_Enphase Energy.png" alt="ENPH_Enphase Energy.png">
-    <img src="/EOG_EOG Resources.png" alt="EOG_EOG Resources.png">
-    <img src="/EPAM_EPAM Systems.png" alt="EPAM_EPAM Systems.png">
-    <img src="/EQIX_Equinix.png" alt="EQIX_Equinix.png">
-    <img src="/EQR_Equity Residential.png" alt="EQR_Equity Residential.png">
-    <img src="/EQT_EQT Corporation.png" alt="EQT_EQT Corporation.png">
-    <img src="/ERIE_Erie Indemnity.png" alt="ERIE_Erie Indemnity.png">
-    <img src="/ESS_Essex Property Trust.png" alt="ESS_Essex Property Trust.png">
-    <img src="/ES_Eversource Energy.png" alt="ES_Eversource Energy.png">
-    <img src="/ETN_Eaton Corporation.png" alt="ETN_Eaton Corporation.png">
-    <img src="/ETR_Entergy.png" alt="ETR_Entergy.png">
-    <img src="/EVRG_Evergy.png" alt="EVRG_Evergy.png">
-    <img src="/EW_Edwards Lifesciences.png" alt="EW_Edwards Lifesciences.png">
-    <img src="/EXC_Exelon.png" alt="EXC_Exelon.png">
-    <img src="/EXE_Expand Energy.png" alt="EXE_Expand Energy.png">
-    <img src="/EXPD_Expeditors International.png" alt="EXPD_Expeditors International.png">
-    <img src="/EXPE_Expedia Group.png" alt="EXPE_Expedia Group.png">
-    <img src="/EXR_Extra Space Storage.png" alt="EXR_Extra Space Storage.png">
-    <img src="/FANG_Diamondback Energy.png" alt="FANG_Diamondback Energy.png">
-    <img src="/FAST_Fastenal.png" alt="FAST_Fastenal.png">
-    <img src="/FCX_Freeport-McMoRan.png" alt="FCX_Freeport-McMoRan.png">
-    <img src="/FDS_FactSet.png" alt="FDS_FactSet.png">
-    <img src="/FDX_FedEx.png" alt="FDX_FedEx.png">
-    <img src="/FE_FirstEnergy.png" alt="FE_FirstEnergy.png">
-    <img src="/FFIV_F5, Inc..png" alt="FFIV_F5, Inc..png">
-    <img src="/FICO_Fair Isaac.png" alt="FICO_Fair Isaac.png">
-    <img src="/FIS_Fidelity National Information Services.png" alt="FIS_Fidelity National Information Services.png">
-    <img src="/FITB_Fifth Third Bancorp.png" alt="FITB_Fifth Third Bancorp.png">
-    <img src="/FI_Fiserv.png" alt="FI_Fiserv.png">
-    <img src="/FOXA_Fox Corporation (Class A).png" alt="FOXA_Fox Corporation (Class A).png">
-    <img src="/FOX_Fox Corporation (Class B).png" alt="FOX_Fox Corporation (Class B).png">
-    <img src="/FRT_Federal Realty Investment Trust.png" alt="FRT_Federal Realty Investment Trust.png">
-    <img src="/FSLR_First Solar.png" alt="FSLR_First Solar.png">
-    <img src="/FTNT_Fortinet.png" alt="FTNT_Fortinet.png">
-    <img src="/FTV_Fortive.png" alt="FTV_Fortive.png">
-    <img src="/F_Ford Motor Company.png" alt="F_Ford Motor Company.png">
-    <img src="/GDDY_GoDaddy.png" alt="GDDY_GoDaddy.png">
-    <img src="/GD_General Dynamics.png" alt="GD_General Dynamics.png">
-    <img src="/GEHC_GE HealthCare.png" alt="GEHC_GE HealthCare.png">
-    <img src="/GEN_Gen Digital.png" alt="GEN_Gen Digital.png">
-    <img src="/GEV_GE Vernova.png" alt="GEV_GE Vernova.png">
-    <img src="/GE_GE Aerospace.png" alt="GE_GE Aerospace.png">
-    <img src="/GILD_Gilead Sciences.png" alt="GILD_Gilead Sciences.png">
-    <img src="/GIS_General Mills.png" alt="GIS_General Mills.png">
-    <img src="/GLW_Corning Inc..png" alt="GLW_Corning Inc..png">
-    <img src="/GL_Globe Life.png" alt="GL_Globe Life.png">
-    <img src="/GM_General Motors.png" alt="GM_General Motors.png">
-    <img src="/GNRC_Generac.png" alt="GNRC_Generac.png">
-    <img src="/GOOGL_Alphabet Inc. (Class A).png" alt="GOOGL_Alphabet Inc. (Class A).png">
-    <img src="/GOOG_Alphabet Inc. (Class C).png" alt="GOOG_Alphabet Inc. (Class C).png">
-    <img src="/GPC_Genuine Parts Company.png" alt="GPC_Genuine Parts Company.png">
-    <img src="/GPN_Global Payments.png" alt="GPN_Global Payments.png">
-    <img src="/GRMN_Garmin.png" alt="GRMN_Garmin.png">
-    <img src="/GS_Goldman Sachs.png" alt="GS_Goldman Sachs.png">
-    <img src="/GWW_W. W. Grainger.png" alt="GWW_W. W. Grainger.png">
-    <img src="/HAL_Halliburton.png" alt="HAL_Halliburton.png">
-    <img src="/HAS_Hasbro.png" alt="HAS_Hasbro.png">
-    <img src="/HBAN_Huntington Bancshares.png" alt="HBAN_Huntington Bancshares.png">
-    <img src="/HCA_HCA Healthcare.png" alt="HCA_HCA Healthcare.png">
-    <img src="/HD_Home Depot (The).png" alt="HD_Home Depot (The).png">
-    <img src="/HIG_Hartford (The).png" alt="HIG_Hartford (The).png">
-    <img src="/HII_Huntington Ingalls Industries.png" alt="HII_Huntington Ingalls Industries.png">
-    <img src="/HLT_Hilton Worldwide.png" alt="HLT_Hilton Worldwide.png">
-    <img src="/HOLX_Hologic.png" alt="HOLX_Hologic.png">
-    <img src="/HON_Honeywell.png" alt="HON_Honeywell.png">
-    <img src="/HPE_Hewlett Packard Enterprise.png" alt="HPE_Hewlett Packard Enterprise.png">
-    <img src="/HPQ_HP Inc..png" alt="HPQ_HP Inc..png">
-    <img src="/HRL_Hormel Foods.png" alt="HRL_Hormel Foods.png">
-    <img src="/HSIC_Henry Schein.png" alt="HSIC_Henry Schein.png">
-    <img src="/HST_Host Hotels & Resorts.png" alt="HST_Host Hotels & Resorts.png">
-    <img src="charts_sp500/HSY_Hershey Company (The).png" alt="HSY_Hershey Company (The).png">
-    <img src="charts_sp500/HUBB_Hubbell Incorporated.png" alt="HUBB_Hubbell Incorporated.png">
-    <img src="charts_sp500/HUM_Humana.png" alt="HUM_Humana.png">
-    <img src="charts_sp500/HWM_Howmet Aerospace.png" alt="HWM_Howmet Aerospace.png">
-    <img src="charts_sp500/IBM_IBM.png" alt="IBM_IBM.png">
-    <img src="charts_sp500/ICE_Intercontinental Exchange.png" alt="ICE_Intercontinental Exchange.png">
-    <img src="charts_sp500/IDXX_Idexx Laboratories.png" alt="IDXX_Idexx Laboratories.png">
-    <img src="charts_sp500/IEX_IDEX Corporation.png" alt="IEX_IDEX Corporation.png">
-    <img src="charts_sp500/IFF_International Flavors & Fragrances.png" alt="IFF_International Flavors & Fragrances.png">
-    <img src="charts_sp500/INCY_Incyte.png" alt="INCY_Incyte.png">
-    <img src="charts_sp500/INTC_Intel.png" alt="INTC_Intel.png">
-    <img src="charts_sp500/INTU_Intuit.png" alt="INTU_Intuit.png">
-    <img src="charts_sp500/INVH_Invitation Homes.png" alt="INVH_Invitation Homes.png">
-    <img src="charts_sp500/IPG_Interpublic Group of Companies (The).png" alt="IPG_Interpublic Group of Companies (The).png">
-    <img src="charts_sp500/IP_International Paper.png" alt="IP_International Paper.png">
-    <img src="charts_sp500/IQV_IQVIA.png" alt="IQV_IQVIA.png">
-    <img src="charts_sp500/IRM_Iron Mountain.png" alt="IRM_Iron Mountain.png">
-    <img src="charts_sp500/IR_Ingersoll Rand.png" alt="IR_Ingersoll Rand.png">
-    <img src="charts_sp500/ISRG_Intuitive Surgical.png" alt="ISRG_Intuitive Surgical.png">
-    <img src="charts_sp500/ITW_Illinois Tool Works.png" alt="ITW_Illinois Tool Works.png">
-    <img src="charts_sp500/IT_Gartner.png" alt="IT_Gartner.png">
-    <img src="charts_sp500/IVZ_Invesco.png" alt="IVZ_Invesco.png">
-    <img src="charts_sp500/JBHT_J.B. Hunt.png" alt="JBHT_J.B. Hunt.png">
-    <img src="charts_sp500/JBL_Jabil.png" alt="JBL_Jabil.png">
-    <img src="charts_sp500/JCI_Johnson Controls.png" alt="JCI_Johnson Controls.png">
-    <img src="charts_sp500/JKHY_Jack Henry & Associates.png" alt="JKHY_Jack Henry & Associates.png">
-    <img src="charts_sp500/JNJ_Johnson & Johnson.png" alt="JNJ_Johnson & Johnson.png">
-    <img src="charts_sp500/JPM_JPMorgan Chase.png" alt="JPM_JPMorgan Chase.png">
-    <img src="charts_sp500/J_Jacobs Solutions.png" alt="J_Jacobs Solutions.png">
-    <img src="charts_sp500/KDP_Keurig Dr Pepper.png" alt="KDP_Keurig Dr Pepper.png">
-    <img src="charts_sp500/KEYS_Keysight Technologies.png" alt="KEYS_Keysight Technologies.png">
-    <img src="charts_sp500/KEY_KeyCorp.png" alt="KEY_KeyCorp.png">
-    <img src="charts_sp500/KHC_Kraft Heinz.png" alt="KHC_Kraft Heinz.png">
-    <img src="charts_sp500/KIM_Kimco Realty.png" alt="KIM_Kimco Realty.png">
-    <img src="charts_sp500/KKR_KKR & Co..png" alt="KKR_KKR & Co..png">
-    <img src="charts_sp500/KLAC_KLA Corporation.png" alt="KLAC_KLA Corporation.png">
-    <img src="charts_sp500/KMB_Kimberly-Clark.png" alt="KMB_Kimberly-Clark.png">
-    <img src="charts_sp500/KMI_Kinder Morgan.png" alt="KMI_Kinder Morgan.png">
-    <img src="charts_sp500/KMX_CarMax.png" alt="KMX_CarMax.png">
-    <img src="charts_sp500/KO_Coca-Cola Company (The).png" alt="KO_Coca-Cola Company (The).png">
-    <img src="charts_sp500/KR_Kroger.png" alt="KR_Kroger.png">
-    <img src="charts_sp500/KVUE_Kenvue.png" alt="KVUE_Kenvue.png">
-    <img src="charts_sp500/K_Kellanova.png" alt="K_Kellanova.png">
-    <img src="charts_sp500/LDOS_Leidos.png" alt="LDOS_Leidos.png">
-    <img src="charts_sp500/LEN_Lennar.png" alt="LEN_Lennar.png">
-    <img src="charts_sp500/LHX_L3Harris.png" alt="LHX_L3Harris.png">
-    <img src="charts_sp500/LH_Labcorp.png" alt="LH_Labcorp.png">
-    <img src="charts_sp500/LII_Lennox International.png" alt="LII_Lennox International.png">
-    <img src="charts_sp500/LIN_Linde plc.png" alt="LIN_Linde plc.png">
-    <img src="charts_sp500/LKQ_LKQ Corporation.png" alt="LKQ_LKQ Corporation.png">
-    <img src="charts_sp500/LLY_Lilly (Eli).png" alt="LLY_Lilly (Eli).png">
-    <img src="charts_sp500/LMT_Lockheed Martin.png" alt="LMT_Lockheed Martin.png">
-    <img src="charts_sp500/LNT_Alliant Energy.png" alt="LNT_Alliant Energy.png">
-    <img src="charts_sp500/LOW_Lowe's.png" alt="LOW_Lowe's.png">
-    <img src="charts_sp500/LRCX_Lam Research.png" alt="LRCX_Lam Research.png">
-    <img src="charts_sp500/LULU_Lululemon Athletica.png" alt="LULU_Lululemon Athletica.png">
-    <img src="charts_sp500/LUV_Southwest Airlines.png" alt="LUV_Southwest Airlines.png">
-    <img src="charts_sp500/LVS_Las Vegas Sands.png" alt="LVS_Las Vegas Sands.png">
-    <img src="charts_sp500/LW_Lamb Weston.png" alt="LW_Lamb Weston.png">
-    <img src="charts_sp500/LYB_LyondellBasell.png" alt="LYB_LyondellBasell.png">
-    <img src="charts_sp500/LYV_Live Nation Entertainment.png" alt="LYV_Live Nation Entertainment.png">
-    <img src="charts_sp500/L_Loews Corporation.png" alt="L_Loews Corporation.png">
-    <img src="charts_sp500/MAA_Mid-America Apartment Communities.png" alt="MAA_Mid-America Apartment Communities.png">
-    <img src="charts_sp500/MAR_Marriott International.png" alt="MAR_Marriott International.png">
-    <img src="charts_sp500/MAS_Masco.png" alt="MAS_Masco.png">
-    <img src="charts_sp500/MA_Mastercard.png" alt="MA_Mastercard.png">
-    <img src="charts_sp500/MCD_McDonald's.png" alt="MCD_McDonald's.png">
-    <img src="charts_sp500/MCHP_Microchip Technology.png" alt="MCHP_Microchip Technology.png">
-    <img src="charts_sp500/MCK_McKesson Corporation.png" alt="MCK_McKesson Corporation.png">
-    <img src="charts_sp500/MCO_Moody's Corporation.png" alt="MCO_Moody's Corporation.png">
-    <img src="charts_sp500/MDLZ_Mondelez International.png" alt="MDLZ_Mondelez International.png">
-    <img src="charts_sp500/MDT_Medtronic.png" alt="MDT_Medtronic.png">
-    <img src="charts_sp500/META_Meta Platforms.png" alt="META_Meta Platforms.png">
-    <img src="charts_sp500/MET_MetLife.png" alt="MET_MetLife.png">
-    <img src="charts_sp500/MGM_MGM Resorts.png" alt="MGM_MGM Resorts.png">
-    <img src="charts_sp500/MHK_Mohawk Industries.png" alt="MHK_Mohawk Industries.png">
-    <img src="charts_sp500/MKC_McCormick & Company.png" alt="MKC_McCormick & Company.png">
-    <img src="charts_sp500/MKTX_MarketAxess.png" alt="MKTX_MarketAxess.png">
-    <img src="charts_sp500/MLM_Martin Marietta Materials.png" alt="MLM_Martin Marietta Materials.png">
-    <img src="charts_sp500/MMC_Marsh McLennan.png" alt="MMC_Marsh McLennan.png">
-    <img src="charts_sp500/MMM_3M.png" alt="MMM_3M.png">
-    <img src="charts_sp500/MNST_Monster Beverage.png" alt="MNST_Monster Beverage.png">
-    <img src="charts_sp500/MOH_Molina Healthcare.png" alt="MOH_Molina Healthcare.png">
-    <img src="charts_sp500/MOS_Mosaic Company (The).png" alt="MOS_Mosaic Company (The).png">
-    <img src="charts_sp500/MO_Altria.png" alt="MO_Altria.png">
-    <img src="charts_sp500/MPC_Marathon Petroleum.png" alt="MPC_Marathon Petroleum.png">
-    <img src="charts_sp500/MPWR_Monolithic Power Systems.png" alt="MPWR_Monolithic Power Systems.png">
-    <img src="charts_sp500/MRK_Merck & Co..png" alt="MRK_Merck & Co..png">
-    <img src="charts_sp500/MRNA_Moderna.png" alt="MRNA_Moderna.png">
-    <img src="charts_sp500/MSCI_MSCI Inc..png" alt="MSCI_MSCI Inc..png">
-    <img src="charts_sp500/MSFT_Microsoft.png" alt="MSFT_Microsoft.png">
-    <img src="charts_sp500/MSI_Motorola Solutions.png" alt="MSI_Motorola Solutions.png">
-    <img src="charts_sp500/MS_Morgan Stanley.png" alt="MS_Morgan Stanley.png">
-    <img src="charts_sp500/MTB_M&T Bank.png" alt="MTB_M&T Bank.png">
-    <img src="charts_sp500/MTCH_Match Group.png" alt="MTCH_Match Group.png">
-    <img src="charts_sp500/MTD_Mettler Toledo.png" alt="MTD_Mettler Toledo.png">
-    <img src="charts_sp500/MU_Micron Technology.png" alt="MU_Micron Technology.png">
-    <img src="charts_sp500/NCLH_Norwegian Cruise Line Holdings.png" alt="NCLH_Norwegian Cruise Line Holdings.png">
-    <img src="charts_sp500/NDAQ_Nasdaq, Inc..png" alt="NDAQ_Nasdaq, Inc..png">
-    <img src="charts_sp500/NDSN_Nordson Corporation.png" alt="NDSN_Nordson Corporation.png">
-    <img src="charts_sp500/NEE_NextEra Energy.png" alt="NEE_NextEra Energy.png">
-    <img src="charts_sp500/NEM_Newmont.png" alt="NEM_Newmont.png">
-    <img src="charts_sp500/NFLX_Netflix.png" alt="NFLX_Netflix.png">
-    <img src="charts_sp500/NI_NiSource.png" alt="NI_NiSource.png">
-    <img src="charts_sp500/NKE_Nike, Inc..png" alt="NKE_Nike, Inc..png">
-    <img src="charts_sp500/NOC_Northrop Grumman.png" alt="NOC_Northrop Grumman.png">
-    <img src="charts_sp500/NOW_ServiceNow.png" alt="NOW_ServiceNow.png">
-    <img src="charts_sp500/NRG_NRG Energy.png" alt="NRG_NRG Energy.png">
-    <img src="charts_sp500/NSC_Norfolk Southern.png" alt="NSC_Norfolk Southern.png">
-    <img src="charts_sp500/NTAP_NetApp.png" alt="NTAP_NetApp.png">
-    <img src="charts_sp500/NTRS_Northern Trust.png" alt="NTRS_Northern Trust.png">
-    <img src="charts_sp500/NUE_Nucor.png" alt="NUE_Nucor.png">
-    <img src="charts_sp500/NVDA_Nvidia.png" alt="NVDA_Nvidia.png">
-    <img src="charts_sp500/NVR_NVR, Inc..png" alt="NVR_NVR, Inc..png">
-    <img src="charts_sp500/NWSA_News Corp (Class A).png" alt="NWSA_News Corp (Class A).png">
-    <img src="charts_sp500/NWS_News Corp (Class B).png" alt="NWS_News Corp (Class B).png">
-    <img src="charts_sp500/NXPI_NXP Semiconductors.png" alt="NXPI_NXP Semiconductors.png">
-    <img src="charts_sp500/ODFL_Old Dominion.png" alt="ODFL_Old Dominion.png">
-    <img src="charts_sp500/OKE_Oneok.png" alt="OKE_Oneok.png">
-    <img src="charts_sp500/OMC_Omnicom Group.png" alt="OMC_Omnicom Group.png">
-    <img src="charts_sp500/ON_ON Semiconductor.png" alt="ON_ON Semiconductor.png">
-    <img src="charts_sp500/ORCL_Oracle Corporation.png" alt="ORCL_Oracle Corporation.png">
-    <img src="charts_sp500/ORLY_O’Reilly Automotive.png" alt="ORLY_O’Reilly Automotive.png">
-    <img src="charts_sp500/OTIS_Otis Worldwide.png" alt="OTIS_Otis Worldwide.png">
-    <img src="charts_sp500/OXY_Occidental Petroleum.png" alt="OXY_Occidental Petroleum.png">
-    <img src="charts_sp500/O_Realty Income.png" alt="O_Realty Income.png">
-    <img src="charts_sp500/PANW_Palo Alto Networks.png" alt="PANW_Palo Alto Networks.png">
-    <img src="charts_sp500/PAYC_Paycom.png" alt="PAYC_Paycom.png">
-    <img src="charts_sp500/PAYX_Paychex.png" alt="PAYX_Paychex.png">
-    <img src="charts_sp500/PCAR_Paccar.png" alt="PCAR_Paccar.png">
-    <img src="charts_sp500/PCG_PG&E Corporation.png" alt="PCG_PG&E Corporation.png">
-    <img src="charts_sp500/PEG_Public Service Enterprise Group.png" alt="PEG_Public Service Enterprise Group.png">
-    <img src="charts_sp500/PEP_PepsiCo.png" alt="PEP_PepsiCo.png">
-    <img src="charts_sp500/PFE_Pfizer.png" alt="PFE_Pfizer.png">
-    <img src="charts_sp500/PFG_Principal Financial Group.png" alt="PFG_Principal Financial Group.png">
-    <img src="charts_sp500/PGR_Progressive Corporation.png" alt="PGR_Progressive Corporation.png">
-    <img src="charts_sp500/PG_Procter & Gamble.png" alt="PG_Procter & Gamble.png">
-    <img src="charts_sp500/PHM_PulteGroup.png" alt="PHM_PulteGroup.png">
-    <img src="charts_sp500/PH_Parker Hannifin.png" alt="PH_Parker Hannifin.png">
-    <img src="charts_sp500/PKG_Packaging Corporation of America.png" alt="PKG_Packaging Corporation of America.png">
-    <img src="charts_sp500/PLD_Prologis.png" alt="PLD_Prologis.png">
-    <img src="charts_sp500/PLTR_Palantir Technologies.png" alt="PLTR_Palantir Technologies.png">
-    <img src="charts_sp500/PM_Philip Morris International.png" alt="PM_Philip Morris International.png">
-    <img src="charts_sp500/PNC_PNC Financial Services.png" alt="PNC_PNC Financial Services.png">
-    <img src="charts_sp500/PNR_Pentair.png" alt="PNR_Pentair.png">
-    <img src="charts_sp500/PNW_Pinnacle West Capital.png" alt="PNW_Pinnacle West Capital.png">
-    <img src="charts_sp500/PODD_Insulet Corporation.png" alt="PODD_Insulet Corporation.png">
-    <img src="charts_sp500/POOL_Pool Corporation.png" alt="POOL_Pool Corporation.png">
-    <img src="charts_sp500/PPG_PPG Industries.png" alt="PPG_PPG Industries.png">
-    <img src="charts_sp500/PPL_PPL Corporation.png" alt="PPL_PPL Corporation.png">
-    <img src="charts_sp500/PRU_Prudential Financial.png" alt="PRU_Prudential Financial.png">
-    <img src="charts_sp500/PSA_Public Storage.png" alt="PSA_Public Storage.png">
-    <img src="charts_sp500/PSKY_Paramount Skydance Corporation.png" alt="PSKY_Paramount Skydance Corporation.png">
-    <img src="charts_sp500/PSX_Phillips 66.png" alt="PSX_Phillips 66.png">
-    <img src="charts_sp500/PTC_PTC Inc..png" alt="PTC_PTC Inc..png">
-    <img src="charts_sp500/PWR_Quanta Services.png" alt="PWR_Quanta Services.png">
-    <img src="charts_sp500/PYPL_PayPal.png" alt="PYPL_PayPal.png">
-    <img src="charts_sp500/QCOM_Qualcomm.png" alt="QCOM_Qualcomm.png">
-    <img src="charts_sp500/RCL_Royal Caribbean Group.png" alt="RCL_Royal Caribbean Group.png">
-    <img src="charts_sp500/REGN_Regeneron Pharmaceuticals.png" alt="REGN_Regeneron Pharmaceuticals.png">
-    <img src="charts_sp500/REG_Regency Centers.png" alt="REG_Regency Centers.png">
-    <img src="charts_sp500/RF_Regions Financial Corporation.png" alt="RF_Regions Financial Corporation.png">
-    <img src="charts_sp500/RJF_Raymond James Financial.png" alt="RJF_Raymond James Financial.png">
-    <img src="charts_sp500/RL_Ralph Lauren Corporation.png" alt="RL_Ralph Lauren Corporation.png">
-    <img src="charts_sp500/RMD_ResMed.png" alt="RMD_ResMed.png">
-    <img src="charts_sp500/ROK_Rockwell Automation.png" alt="ROK_Rockwell Automation.png">
-    <img src="charts_sp500/ROL_Rollins, Inc..png" alt="ROL_Rollins, Inc..png">
-    <img src="charts_sp500/ROP_Roper Technologies.png" alt="ROP_Roper Technologies.png">
-    <img src="charts_sp500/ROST_Ross Stores.png" alt="ROST_Ross Stores.png">
-    <img src="charts_sp500/RSG_Republic Services.png" alt="RSG_Republic Services.png">
-    <img src="charts_sp500/RTX_RTX Corporation.png" alt="RTX_RTX Corporation.png">
-    <img src="charts_sp500/RVTY_Revvity.png" alt="RVTY_Revvity.png">
-    <img src="charts_sp500/SBAC_SBA Communications.png" alt="SBAC_SBA Communications.png">
-    <img src="charts_sp500/SBUX_Starbucks.png" alt="SBUX_Starbucks.png">
-    <img src="charts_sp500/SCHW_Charles Schwab Corporation.png" alt="SCHW_Charles Schwab Corporation.png">
-    <img src="charts_sp500/SHW_Sherwin-Williams.png" alt="SHW_Sherwin-Williams.png">
-    <img src="charts_sp500/SJM_J.M. Smucker Company (The).png" alt="SJM_J.M. Smucker Company (The).png">
-    <img src="charts_sp500/SLB_Schlumberger.png" alt="SLB_Schlumberger.png">
-    <img src="charts_sp500/SMCI_Supermicro.png" alt="SMCI_Supermicro.png">
-    <img src="charts_sp500/SNA_Snap-on.png" alt="SNA_Snap-on.png">
-    <img src="charts_sp500/SNPS_Synopsys.png" alt="SNPS_Synopsys.png">
-    <img src="charts_sp500/SOLV_Solventum.png" alt="SOLV_Solventum.png">
-    <img src="charts_sp500/SO_Southern Company.png" alt="SO_Southern Company.png">
-    <img src="charts_sp500/SPGI_S&P Global.png" alt="SPGI_S&P Global.png">
-    <img src="charts_sp500/SPG_Simon Property Group.png" alt="SPG_Simon Property Group.png">
-    <img src="charts_sp500/SRE_Sempra.png" alt="SRE_Sempra.png">
-    <img src="charts_sp500/STE_Steris.png" alt="STE_Steris.png">
-    <img src="charts_sp500/STLD_Steel Dynamics.png" alt="STLD_Steel Dynamics.png">
-    <img src="charts_sp500/STT_State Street Corporation.png" alt="STT_State Street Corporation.png">
-    <img src="charts_sp500/STX_Seagate Technology.png" alt="STX_Seagate Technology.png">
-    <img src="charts_sp500/STZ_Constellation Brands.png" alt="STZ_Constellation Brands.png">
-    <img src="charts_sp500/SWKS_Skyworks Solutions.png" alt="SWKS_Skyworks Solutions.png">
-    <img src="charts_sp500/SWK_Stanley Black & Decker.png" alt="SWK_Stanley Black & Decker.png">
-    <img src="charts_sp500/SW_Smurfit Westrock.png" alt="SW_Smurfit Westrock.png">
-    <img src="charts_sp500/SYF_Synchrony Financial.png" alt="SYF_Synchrony Financial.png">
-    <img src="charts_sp500/SYK_Stryker Corporation.png" alt="SYK_Stryker Corporation.png">
-    <img src="charts_sp500/SYY_Sysco.png" alt="SYY_Sysco.png">
-    <img src="charts_sp500/TAP_Molson Coors Beverage Company.png" alt="TAP_Molson Coors Beverage Company.png">
-    <img src="charts_sp500/TDG_TransDigm Group.png" alt="TDG_TransDigm Group.png">
-    <img src="charts_sp500/TDY_Teledyne Technologies.png" alt="TDY_Teledyne Technologies.png">
-    <img src="charts_sp500/TECH_Bio-Techne.png" alt="TECH_Bio-Techne.png">
-    <img src="charts_sp500/TEL_TE Connectivity.png" alt="TEL_TE Connectivity.png">
-    <img src="charts_sp500/TER_Teradyne.png" alt="TER_Teradyne.png">
-    <img src="charts_sp500/TFC_Truist Financial.png" alt="TFC_Truist Financial.png">
-    <img src="charts_sp500/TGT_Target Corporation.png" alt="TGT_Target Corporation.png">
-    <img src="charts_sp500/TJX_TJX Companies.png" alt="TJX_TJX Companies.png">
-    <img src="charts_sp500/TKO_TKO Group Holdings.png" alt="TKO_TKO Group Holdings.png">
-    <img src="charts_sp500/TMO_Thermo Fisher Scientific.png" alt="TMO_Thermo Fisher Scientific.png">
-    <img src="charts_sp500/TMUS_T-Mobile US.png" alt="TMUS_T-Mobile US.png">
-    <img src="charts_sp500/TPL_Texas Pacific Land Corporation.png" alt="TPL_Texas Pacific Land Corporation.png">
-    <img src="charts_sp500/TPR_Tapestry, Inc..png" alt="TPR_Tapestry, Inc..png">
-    <img src="charts_sp500/TRGP_Targa Resources.png" alt="TRGP_Targa Resources.png">
-    <img src="charts_sp500/TRMB_Trimble Inc..png" alt="TRMB_Trimble Inc..png">
-    <img src="charts_sp500/TROW_T. Rowe Price.png" alt="TROW_T. Rowe Price.png">
-    <img src="charts_sp500/TRV_Travelers Companies (The).png" alt="TRV_Travelers Companies (The).png">
-    <img src="charts_sp500/TSCO_Tractor Supply.png" alt="TSCO_Tractor Supply.png">
-    <img src="charts_sp500/TSLA_Tesla, Inc..png" alt="TSLA_Tesla, Inc..png">
-    <img src="charts_sp500/TSN_Tyson Foods.png" alt="TSN_Tyson Foods.png">
-    <img src="charts_sp500/TTD_Trade Desk (The).png" alt="TTD_Trade Desk (The).png">
-    <img src="charts_sp500/TTWO_Take-Two Interactive.png" alt="TTWO_Take-Two Interactive.png">
-    <img src="charts_sp500/TT_Trane Technologies.png" alt="TT_Trane Technologies.png">
-    <img src="charts_sp500/TXN_Texas Instruments.png" alt="TXN_Texas Instruments.png">
-    <img src="charts_sp500/TXT_Textron.png" alt="TXT_Textron.png">
-    <img src="charts_sp500/TYL_Tyler Technologies.png" alt="TYL_Tyler Technologies.png">
-    <img src="charts_sp500/T_AT&T.png" alt="T_AT&T.png">
-    <img src="charts_sp500/UAL_United Airlines Holdings.png" alt="UAL_United Airlines Holdings.png">
-    <img src="charts_sp500/UBER_Uber.png" alt="UBER_Uber.png">
-    <img src="charts_sp500/UDR_UDR, Inc..png" alt="UDR_UDR, Inc..png">
-    <img src="charts_sp500/UHS_Universal Health Services.png" alt="UHS_Universal Health Services.png">
-    <img src="charts_sp500/ULTA_Ulta Beauty.png" alt="ULTA_Ulta Beauty.png">
-    <img src="charts_sp500/UNH_UnitedHealth Group.png" alt="UNH_UnitedHealth Group.png">
-    <img src="charts_sp500/UNP_Union Pacific Corporation.png" alt="UNP_Union Pacific Corporation.png">
-    <img src="charts_sp500/UPS_United Parcel Service.png" alt="UPS_United Parcel Service.png">
-    <img src="charts_sp500/URI_United Rentals.png" alt="URI_United Rentals.png">
-    <img src="charts_sp500/USB_U.S. Bancorp.png" alt="USB_U.S. Bancorp.png">
-    <img src="charts_sp500/VICI_Vici Properties.png" alt="VICI_Vici Properties.png">
-    <img src="charts_sp500/VLO_Valero Energy.png" alt="VLO_Valero Energy.png">
-    <img src="charts_sp500/VLTO_Veralto.png" alt="VLTO_Veralto.png">
-    <img src="charts_sp500/VMC_Vulcan Materials Company.png" alt="VMC_Vulcan Materials Company.png">
-    <img src="charts_sp500/VRSK_Verisk Analytics.png" alt="VRSK_Verisk Analytics.png">
-    <img src="charts_sp500/VRSN_Verisign.png" alt="VRSN_Verisign.png">
-    <img src="charts_sp500/VRTX_Vertex Pharmaceuticals.png" alt="VRTX_Vertex Pharmaceuticals.png">
-    <img src="charts_sp500/VST_Vistra Corp..png" alt="VST_Vistra Corp..png">
-    <img src="charts_sp500/VTRS_Viatris.png" alt="VTRS_Viatris.png">
-    <img src="charts_sp500/VTR_Ventas.png" alt="VTR_Ventas.png">
-    <img src="charts_sp500/VZ_Verizon.png" alt="VZ_Verizon.png">
-    <img src="charts_sp500/V_Visa Inc..png" alt="V_Visa Inc..png">
-    <img src="charts_sp500/WAB_Wabtec.png" alt="WAB_Wabtec.png">
-    <img src="charts_sp500/WAT_Waters Corporation.png" alt="WAT_Waters Corporation.png">
-    <img src="charts_sp500/WBA_Walgreens Boots Alliance.png" alt="WBA_Walgreens Boots Alliance.png">
-    <img src="charts_sp500/WBD_Warner Bros. Discovery.png" alt="WBD_Warner Bros. Discovery.png">
-    <img src="charts_sp500/WDAY_Workday, Inc..png" alt="WDAY_Workday, Inc..png">
-    <img src="charts_sp500/WDC_Western Digital.png" alt="WDC_Western Digital.png">
-    <img src="charts_sp500/WEC_WEC Energy Group.png" alt="WEC_WEC Energy Group.png">
-    <img src="charts_sp500/WELL_Welltower.png" alt="WELL_Welltower.png">
-    <img src="charts_sp500/WFC_Wells Fargo.png" alt="WFC_Wells Fargo.png">
-    <img src="charts_sp500/WMB_Williams Companies.png" alt="WMB_Williams Companies.png">
-    <img src="charts_sp500/WMT_Walmart.png" alt="WMT_Walmart.png">
-    <img src="charts_sp500/WM_Waste Management.png" alt="WM_Waste Management.png">
-    <img src="charts_sp500/WRB_W. R. Berkley Corporation.png" alt="WRB_W. R. Berkley Corporation.png">
-    <img src="charts_sp500/WSM_Williams-Sonoma, Inc..png" alt="WSM_Williams-Sonoma, Inc..png">
-    <img src="charts_sp500/WST_West Pharmaceutical Services.png" alt="WST_West Pharmaceutical Services.png">
-    <img src="charts_sp500/WTW_Willis Towers Watson.png" alt="WTW_Willis Towers Watson.png">
-    <img src="charts_sp500/WYNN_Wynn Resorts.png" alt="WYNN_Wynn Resorts.png">
-    <img src="charts_sp500/WY_Weyerhaeuser.png" alt="WY_Weyerhaeuser.png">
-    <img src="charts_sp500/XEL_Xcel Energy.png" alt="XEL_Xcel Energy.png">
-    <img src="charts_sp500/XOM_ExxonMobil.png" alt="XOM_ExxonMobil.png">
-    <img src="charts_sp500/XYL_Xylem Inc..png" alt="XYL_Xylem Inc..png">
-    <img src="charts_sp500/XYZ_Block, Inc..png" alt="XYZ_Block, Inc..png">
-    <img src="charts_sp500/YUM_Yum! Brands.png" alt="YUM_Yum! Brands.png">
-    <img src="charts_sp500/ZBH_Zimmer Biomet.png" alt="ZBH_Zimmer Biomet.png">
-    <img src="charts_sp500/ZBRA_Zebra Technologies.png" alt="ZBRA_Zebra Technologies.png">
-    <img src="charts_sp500/ZTS_Zoetis.png" alt="ZTS_Zoetis.png">
+    <img src="AAPL_Apple Inc..png" alt="AAPL_Apple Inc..png">
+    <img src="ABBV_AbbVie.png" alt="ABBV_AbbVie.png">
+    <img src="ABNB_Airbnb.png" alt="ABNB_Airbnb.png">
+    <img src="ABT_Abbott Laboratories.png" alt="ABT_Abbott Laboratories.png">
+    <img src="ACGL_Arch Capital Group.png" alt="ACGL_Arch Capital Group.png">
+    <img src="ACN_Accenture.png" alt="ACN_Accenture.png">
+    <img src="ADBE_Adobe Inc..png" alt="ADBE_Adobe Inc..png">
+    <img src="ADI_Analog Devices.png" alt="ADI_Analog Devices.png">
+    <img src="ADM_Archer Daniels Midland.png" alt="ADM_Archer Daniels Midland.png">
+    <img src="ADP_Automatic Data Processing.png" alt="ADP_Automatic Data Processing.png">
+    <img src="ADSK_Autodesk.png" alt="ADSK_Autodesk.png">
+    <img src="AEE_Ameren.png" alt="AEE_Ameren.png">
+    <img src="AEP_American Electric Power.png" alt="AEP_American Electric Power.png">
+    <img src="AES_AES Corporation.png" alt="AES_AES Corporation.png">
+    <img src="AFL_Aflac.png" alt="AFL_Aflac.png">
+    <img src="AIG_American International Group.png" alt="AIG_American International Group.png">
+    <img src="AIZ_Assurant.png" alt="AIZ_Assurant.png">
+    <img src="AJG_Arthur J. Gallagher & Co..png" alt="AJG_Arthur J. Gallagher & Co..png">
+    <img src="AKAM_Akamai Technologies.png" alt="AKAM_Akamai Technologies.png">
+    <img src="ALB_Albemarle Corporation.png" alt="ALB_Albemarle Corporation.png">
+    <img src="ALGN_Align Technology.png" alt="ALGN_Align Technology.png">
+    <img src="ALLE_Allegion.png" alt="ALLE_Allegion.png">
+    <img src="ALL_Allstate.png" alt="ALL_Allstate.png">
+    <img src="AMAT_Applied Materials.png" alt="AMAT_Applied Materials.png">
+    <img src="AMCR_Amcor.png" alt="AMCR_Amcor.png">
+    <img src="AMD_Advanced Micro Devices.png" alt="AMD_Advanced Micro Devices.png">
+    <img src="AME_Ametek.png" alt="AME_Ametek.png">
+    <img src="AMGN_Amgen.png" alt="AMGN_Amgen.png">
+    <img src="AMP_Ameriprise Financial.png" alt="AMP_Ameriprise Financial.png">
+    <img src="AMT_American Tower.png" alt="AMT_American Tower.png">
+    <img src="AMZN_Amazon.png" alt="AMZN_Amazon.png">
+    <img src="ANET_Arista Networks.png" alt="ANET_Arista Networks.png">
+    <img src="AON_Aon plc.png" alt="AON_Aon plc.png">
+    <img src="AOS_A. O. Smith.png" alt="AOS_A. O. Smith.png">
+    <img src="APA_APA Corporation.png" alt="APA_APA Corporation.png">
+    <img src="APD_Air Products.png" alt="APD_Air Products.png">
+    <img src="APH_Amphenol.png" alt="APH_Amphenol.png">
+    <img src="APO_Apollo Global Management.png" alt="APO_Apollo Global Management.png">
+    <img src="APTV_Aptiv.png" alt="APTV_Aptiv.png">
+    <img src="ARE_Alexandria Real Estate Equities.png" alt="ARE_Alexandria Real Estate Equities.png">
+    <img src="ATO_Atmos Energy.png" alt="ATO_Atmos Energy.png">
+    <img src="AVB_AvalonBay Communities.png" alt="AVB_AvalonBay Communities.png">
+    <img src="AVGO_Broadcom.png" alt="AVGO_Broadcom.png">
+    <img src="AVY_Avery Dennison.png" alt="AVY_Avery Dennison.png">
+    <img src="AWK_American Water Works.png" alt="AWK_American Water Works.png">
+    <img src="AXON_Axon Enterprise.png" alt="AXON_Axon Enterprise.png">
+    <img src="AXP_American Express.png" alt="AXP_American Express.png">
+    <img src="AZO_AutoZone.png" alt="AZO_AutoZone.png">
+    <img src="A_Agilent Technologies.png" alt="A_Agilent Technologies.png">
+    <img src="BAC_Bank of America.png" alt="BAC_Bank of America.png">
+    <img src="BALL_Ball Corporation.png" alt="BALL_Ball Corporation.png">
+    <img src="BAX_Baxter International.png" alt="BAX_Baxter International.png">
+    <img src="BA_Boeing.png" alt="BA_Boeing.png">
+    <img src="BBY_Best Buy.png" alt="BBY_Best Buy.png">
+    <img src="BDX_Becton Dickinson.png" alt="BDX_Becton Dickinson.png">
+    <img src="BEN_Franklin Resources.png" alt="BEN_Franklin Resources.png">
+    <img src="BG_Bunge Global.png" alt="BG_Bunge Global.png">
+    <img src="BIIB_Biogen.png" alt="BIIB_Biogen.png">
+    <img src="BKNG_Booking Holdings.png" alt="BKNG_Booking Holdings.png">
+    <img src="BKR_Baker Hughes.png" alt="BKR_Baker Hughes.png">
+    <img src="BK_BNY Mellon.png" alt="BK_BNY Mellon.png">
+    <img src="BLDR_Builders FirstSource.png" alt="BLDR_Builders FirstSource.png">
+    <img src="BLK_BlackRock.png" alt="BLK_BlackRock.png">
+    <img src="BMY_Bristol Myers Squibb.png" alt="BMY_Bristol Myers Squibb.png">
+    <img src="BRO_Brown & Brown.png" alt="BRO_Brown & Brown.png">
+    <img src="BR_Broadridge Financial Solutions.png" alt="BR_Broadridge Financial Solutions.png">
+    <img src="BSX_Boston Scientific.png" alt="BSX_Boston Scientific.png">
+    <img src="BXP_BXP, Inc..png" alt="BXP_BXP, Inc..png">
+    <img src="BX_Blackstone Inc..png" alt="BX_Blackstone Inc..png">
+    <img src="CAG_Conagra Brands.png" alt="CAG_Conagra Brands.png">
+    <img src="CAH_Cardinal Health.png" alt="CAH_Cardinal Health.png">
+    <img src="CARR_Carrier Global.png" alt="CARR_Carrier Global.png">
+    <img src="CAT_Caterpillar Inc..png" alt="CAT_Caterpillar Inc..png">
+    <img src="CBOE_Cboe Global Markets.png" alt="CBOE_Cboe Global Markets.png">
+    <img src="CBRE_CBRE Group.png" alt="CBRE_CBRE Group.png">
+    <img src="CB_Chubb Limited.png" alt="CB_Chubb Limited.png">
+    <img src="CCI_Crown Castle.png" alt="CCI_Crown Castle.png">
+    <img src="CCL_Carnival.png" alt="CCL_Carnival.png">
+    <img src="CDNS_Cadence Design Systems.png" alt="CDNS_Cadence Design Systems.png">
+    <img src="CDW_CDW Corporation.png" alt="CDW_CDW Corporation.png">
+    <img src="CEG_Constellation Energy.png" alt="CEG_Constellation Energy.png">
+    <img src="CFG_Citizens Financial Group.png" alt="CFG_Citizens Financial Group.png">
+    <img src="CF_CF Industries.png" alt="CF_CF Industries.png">
+    <img src="CHD_Church & Dwight.png" alt="CHD_Church & Dwight.png">
+    <img src="CHRW_C.H. Robinson.png" alt="CHRW_C.H. Robinson.png">
+    <img src="CHTR_Charter Communications.png" alt="CHTR_Charter Communications.png">
+    <img src="CINF_Cincinnati Financial.png" alt="CINF_Cincinnati Financial.png">
+    <img src="CI_Cigna.png" alt="CI_Cigna.png">
+    <img src="CLX_Clorox.png" alt="CLX_Clorox.png">
+    <img src="CL_Colgate-Palmolive.png" alt="CL_Colgate-Palmolive.png">
+    <img src="CMCSA_Comcast.png" alt="CMCSA_Comcast.png">
+    <img src="CME_CME Group.png" alt="CME_CME Group.png">
+    <img src="CMG_Chipotle Mexican Grill.png" alt="CMG_Chipotle Mexican Grill.png">
+    <img src="CMI_Cummins.png" alt="CMI_Cummins.png">
+    <img src="CMS_CMS Energy.png" alt="CMS_CMS Energy.png">
+    <img src="CNC_Centene Corporation.png" alt="CNC_Centene Corporation.png">
+    <img src="CNP_CenterPoint Energy.png" alt="CNP_CenterPoint Energy.png">
+    <img src="COF_Capital One.png" alt="COF_Capital One.png">
+    <img src="COIN_Coinbase.png" alt="COIN_Coinbase.png">
+    <img src="COO_Cooper Companies (The).png" alt="COO_Cooper Companies (The).png">
+    <img src="COP_ConocoPhillips.png" alt="COP_ConocoPhillips.png">
+    <img src="COR_Cencora.png" alt="COR_Cencora.png">
+    <img src="COST_Costco.png" alt="COST_Costco.png">
+    <img src="CPAY_Corpay.png" alt="CPAY_Corpay.png">
+    <img src="CPB_Campbell's Company (The).png" alt="CPB_Campbell's Company (The).png">
+    <img src="CPRT_Copart.png" alt="CPRT_Copart.png">
+    <img src="CPT_Camden Property Trust.png" alt="CPT_Camden Property Trust.png">
+    <img src="CRL_Charles River Laboratories.png" alt="CRL_Charles River Laboratories.png">
+    <img src="CRM_Salesforce.png" alt="CRM_Salesforce.png">
+    <img src="CRWD_CrowdStrike.png" alt="CRWD_CrowdStrike.png">
+    <img src="CSCO_Cisco.png" alt="CSCO_Cisco.png">
+    <img src="CSGP_CoStar Group.png" alt="CSGP_CoStar Group.png">
+    <img src="CSX_CSX Corporation.png" alt="CSX_CSX Corporation.png">
+    <img src="CTAS_Cintas.png" alt="CTAS_Cintas.png">
+    <img src="CTRA_Coterra.png" alt="CTRA_Coterra.png">
+    <img src="CTSH_Cognizant.png" alt="CTSH_Cognizant.png">
+    <img src="CTVA_Corteva.png" alt="CTVA_Corteva.png">
+    <img src="CVS_CVS Health.png" alt="CVS_CVS Health.png">
+    <img src="CVX_Chevron Corporation.png" alt="CVX_Chevron Corporation.png">
+    <img src="CZR_Caesars Entertainment.png" alt="CZR_Caesars Entertainment.png">
+    <img src="C_Citigroup.png" alt="C_Citigroup.png">
+    <img src="DAL_Delta Air Lines.png" alt="DAL_Delta Air Lines.png">
+    <img src="DASH_DoorDash.png" alt="DASH_DoorDash.png">
+    <img src="DAY_Dayforce.png" alt="DAY_Dayforce.png">
+    <img src="DDOG_Datadog.png" alt="DDOG_Datadog.png">
+    <img src="DD_DuPont.png" alt="DD_DuPont.png">
+    <img src="DECK_Deckers Brands.png" alt="DECK_Deckers Brands.png">
+    <img src="DELL_Dell Technologies.png" alt="DELL_Dell Technologies.png">
+    <img src="DE_Deere & Company.png" alt="DE_Deere & Company.png">
+    <img src="DGX_Quest Diagnostics.png" alt="DGX_Quest Diagnostics.png">
+    <img src="DG_Dollar General.png" alt="DG_Dollar General.png">
+    <img src="DHI_D. R. Horton.png" alt="DHI_D. R. Horton.png">
+    <img src="DHR_Danaher Corporation.png" alt="DHR_Danaher Corporation.png">
+    <img src="DIS_Walt Disney Company (The).png" alt="DIS_Walt Disney Company (The).png">
+    <img src="DLR_Digital Realty.png" alt="DLR_Digital Realty.png">
+    <img src="DLTR_Dollar Tree.png" alt="DLTR_Dollar Tree.png">
+    <img src="DOC_Healthpeak Properties.png" alt="DOC_Healthpeak Properties.png">
+    <img src="DOV_Dover Corporation.png" alt="DOV_Dover Corporation.png">
+    <img src="DOW_Dow Inc..png" alt="DOW_Dow Inc..png">
+    <img src="DPZ_Domino's.png" alt="DPZ_Domino's.png">
+    <img src="DRI_Darden Restaurants.png" alt="DRI_Darden Restaurants.png">
+    <img src="DTE_DTE Energy.png" alt="DTE_DTE Energy.png">
+    <img src="DUK_Duke Energy.png" alt="DUK_Duke Energy.png">
+    <img src="DVA_DaVita.png" alt="DVA_DaVita.png">
+    <img src="DVN_Devon Energy.png" alt="DVN_Devon Energy.png">
+    <img src="DXCM_Dexcom.png" alt="DXCM_Dexcom.png">
+    <img src="D_Dominion Energy.png" alt="D_Dominion Energy.png">
+    <img src="EA_Electronic Arts.png" alt="EA_Electronic Arts.png">
+    <img src="EBAY_eBay Inc..png" alt="EBAY_eBay Inc..png">
+    <img src="ECL_Ecolab.png" alt="ECL_Ecolab.png">
+    <img src="ED_Consolidated Edison.png" alt="ED_Consolidated Edison.png">
+    <img src="EFX_Equifax.png" alt="EFX_Equifax.png">
+    <img src="EG_Everest Group.png" alt="EG_Everest Group.png">
+    <img src="EIX_Edison International.png" alt="EIX_Edison International.png">
+    <img src="ELV_Elevance Health.png" alt="ELV_Elevance Health.png">
+    <img src="EL_Estée Lauder Companies (The).png" alt="EL_Estée Lauder Companies (The).png">
+    <img src="EMN_Eastman Chemical Company.png" alt="EMN_Eastman Chemical Company.png">
+    <img src="EMR_Emerson Electric.png" alt="EMR_Emerson Electric.png">
+    <img src="ENPH_Enphase Energy.png" alt="ENPH_Enphase Energy.png">
+    <img src="EOG_EOG Resources.png" alt="EOG_EOG Resources.png">
+    <img src="EPAM_EPAM Systems.png" alt="EPAM_EPAM Systems.png">
+    <img src="EQIX_Equinix.png" alt="EQIX_Equinix.png">
+    <img src="EQR_Equity Residential.png" alt="EQR_Equity Residential.png">
+    <img src="EQT_EQT Corporation.png" alt="EQT_EQT Corporation.png">
+    <img src="ERIE_Erie Indemnity.png" alt="ERIE_Erie Indemnity.png">
+    <img src="ESS_Essex Property Trust.png" alt="ESS_Essex Property Trust.png">
+    <img src="ES_Eversource Energy.png" alt="ES_Eversource Energy.png">
+    <img src="ETN_Eaton Corporation.png" alt="ETN_Eaton Corporation.png">
+    <img src="ETR_Entergy.png" alt="ETR_Entergy.png">
+    <img src="EVRG_Evergy.png" alt="EVRG_Evergy.png">
+    <img src="EW_Edwards Lifesciences.png" alt="EW_Edwards Lifesciences.png">
+    <img src="EXC_Exelon.png" alt="EXC_Exelon.png">
+    <img src="EXE_Expand Energy.png" alt="EXE_Expand Energy.png">
+    <img src="EXPD_Expeditors International.png" alt="EXPD_Expeditors International.png">
+    <img src="EXPE_Expedia Group.png" alt="EXPE_Expedia Group.png">
+    <img src="EXR_Extra Space Storage.png" alt="EXR_Extra Space Storage.png">
+    <img src="FANG_Diamondback Energy.png" alt="FANG_Diamondback Energy.png">
+    <img src="FAST_Fastenal.png" alt="FAST_Fastenal.png">
+    <img src="FCX_Freeport-McMoRan.png" alt="FCX_Freeport-McMoRan.png">
+    <img src="FDS_FactSet.png" alt="FDS_FactSet.png">
+    <img src="FDX_FedEx.png" alt="FDX_FedEx.png">
+    <img src="FE_FirstEnergy.png" alt="FE_FirstEnergy.png">
+    <img src="FFIV_F5, Inc..png" alt="FFIV_F5, Inc..png">
+    <img src="FICO_Fair Isaac.png" alt="FICO_Fair Isaac.png">
+    <img src="FIS_Fidelity National Information Services.png" alt="FIS_Fidelity National Information Services.png">
+    <img src="FITB_Fifth Third Bancorp.png" alt="FITB_Fifth Third Bancorp.png">
+    <img src="FI_Fiserv.png" alt="FI_Fiserv.png">
+    <img src="FOXA_Fox Corporation (Class A).png" alt="FOXA_Fox Corporation (Class A).png">
+    <img src="FOX_Fox Corporation (Class B).png" alt="FOX_Fox Corporation (Class B).png">
+    <img src="FRT_Federal Realty Investment Trust.png" alt="FRT_Federal Realty Investment Trust.png">
+    <img src="FSLR_First Solar.png" alt="FSLR_First Solar.png">
+    <img src="FTNT_Fortinet.png" alt="FTNT_Fortinet.png">
+    <img src="FTV_Fortive.png" alt="FTV_Fortive.png">
+    <img src="F_Ford Motor Company.png" alt="F_Ford Motor Company.png">
+    <img src="GDDY_GoDaddy.png" alt="GDDY_GoDaddy.png">
+    <img src="GD_General Dynamics.png" alt="GD_General Dynamics.png">
+    <img src="GEHC_GE HealthCare.png" alt="GEHC_GE HealthCare.png">
+    <img src="GEN_Gen Digital.png" alt="GEN_Gen Digital.png">
+    <img src="GEV_GE Vernova.png" alt="GEV_GE Vernova.png">
+    <img src="GE_GE Aerospace.png" alt="GE_GE Aerospace.png">
+    <img src="GILD_Gilead Sciences.png" alt="GILD_Gilead Sciences.png">
+    <img src="GIS_General Mills.png" alt="GIS_General Mills.png">
+    <img src="GLW_Corning Inc..png" alt="GLW_Corning Inc..png">
+    <img src="GL_Globe Life.png" alt="GL_Globe Life.png">
+    <img src="GM_General Motors.png" alt="GM_General Motors.png">
+    <img src="GNRC_Generac.png" alt="GNRC_Generac.png">
+    <img src="GOOGL_Alphabet Inc. (Class A).png" alt="GOOGL_Alphabet Inc. (Class A).png">
+    <img src="GOOG_Alphabet Inc. (Class C).png" alt="GOOG_Alphabet Inc. (Class C).png">
+    <img src="GPC_Genuine Parts Company.png" alt="GPC_Genuine Parts Company.png">
+    <img src="GPN_Global Payments.png" alt="GPN_Global Payments.png">
+    <img src="GRMN_Garmin.png" alt="GRMN_Garmin.png">
+    <img src="GS_Goldman Sachs.png" alt="GS_Goldman Sachs.png">
+    <img src="GWW_W. W. Grainger.png" alt="GWW_W. W. Grainger.png">
+    <img src="HAL_Halliburton.png" alt="HAL_Halliburton.png">
+    <img src="HAS_Hasbro.png" alt="HAS_Hasbro.png">
+    <img src="HBAN_Huntington Bancshares.png" alt="HBAN_Huntington Bancshares.png">
+    <img src="HCA_HCA Healthcare.png" alt="HCA_HCA Healthcare.png">
+    <img src="HD_Home Depot (The).png" alt="HD_Home Depot (The).png">
+    <img src="HIG_Hartford (The).png" alt="HIG_Hartford (The).png">
+    <img src="HII_Huntington Ingalls Industries.png" alt="HII_Huntington Ingalls Industries.png">
+    <img src="HLT_Hilton Worldwide.png" alt="HLT_Hilton Worldwide.png">
+    <img src="HOLX_Hologic.png" alt="HOLX_Hologic.png">
+    <img src="HON_Honeywell.png" alt="HON_Honeywell.png">
+    <img src="HPE_Hewlett Packard Enterprise.png" alt="HPE_Hewlett Packard Enterprise.png">
+    <img src="HPQ_HP Inc..png" alt="HPQ_HP Inc..png">
+    <img src="HRL_Hormel Foods.png" alt="HRL_Hormel Foods.png">
+    <img src="HSIC_Henry Schein.png" alt="HSIC_Henry Schein.png">
+    <img src="HST_Host Hotels & Resorts.png" alt="HST_Host Hotels & Resorts.png">
+    <img src="HSY_Hershey Company (The).png" alt="HSY_Hershey Company (The).png">
+    <img src="HUBB_Hubbell Incorporated.png" alt="HUBB_Hubbell Incorporated.png">
+    <img src="HUM_Humana.png" alt="HUM_Humana.png">
+    <img src="HWM_Howmet Aerospace.png" alt="HWM_Howmet Aerospace.png">
+    <img src="IBM_IBM.png" alt="IBM_IBM.png">
+    <img src="ICE_Intercontinental Exchange.png" alt="ICE_Intercontinental Exchange.png">
+    <img src="IDXX_Idexx Laboratories.png" alt="IDXX_Idexx Laboratories.png">
+    <img src="IEX_IDEX Corporation.png" alt="IEX_IDEX Corporation.png">
+    <img src="IFF_International Flavors & Fragrances.png" alt="IFF_International Flavors & Fragrances.png">
+    <img src="INCY_Incyte.png" alt="INCY_Incyte.png">
+    <img src="INTC_Intel.png" alt="INTC_Intel.png">
+    <img src="INTU_Intuit.png" alt="INTU_Intuit.png">
+    <img src="INVH_Invitation Homes.png" alt="INVH_Invitation Homes.png">
+    <img src="IPG_Interpublic Group of Companies (The).png" alt="IPG_Interpublic Group of Companies (The).png">
+    <img src="IP_International Paper.png" alt="IP_International Paper.png">
+    <img src="IQV_IQVIA.png" alt="IQV_IQVIA.png">
+    <img src="IRM_Iron Mountain.png" alt="IRM_Iron Mountain.png">
+    <img src="IR_Ingersoll Rand.png" alt="IR_Ingersoll Rand.png">
+    <img src="ISRG_Intuitive Surgical.png" alt="ISRG_Intuitive Surgical.png">
+    <img src="ITW_Illinois Tool Works.png" alt="ITW_Illinois Tool Works.png">
+    <img src="IT_Gartner.png" alt="IT_Gartner.png">
+    <img src="IVZ_Invesco.png" alt="IVZ_Invesco.png">
+    <img src="JBHT_J.B. Hunt.png" alt="JBHT_J.B. Hunt.png">
+    <img src="JBL_Jabil.png" alt="JBL_Jabil.png">
+    <img src="JCI_Johnson Controls.png" alt="JCI_Johnson Controls.png">
+    <img src="JKHY_Jack Henry & Associates.png" alt="JKHY_Jack Henry & Associates.png">
+    <img src="JNJ_Johnson & Johnson.png" alt="JNJ_Johnson & Johnson.png">
+    <img src="JPM_JPMorgan Chase.png" alt="JPM_JPMorgan Chase.png">
+    <img src="J_Jacobs Solutions.png" alt="J_Jacobs Solutions.png">
+    <img src="KDP_Keurig Dr Pepper.png" alt="KDP_Keurig Dr Pepper.png">
+    <img src="KEYS_Keysight Technologies.png" alt="KEYS_Keysight Technologies.png">
+    <img src="KEY_KeyCorp.png" alt="KEY_KeyCorp.png">
+    <img src="KHC_Kraft Heinz.png" alt="KHC_Kraft Heinz.png">
+    <img src="KIM_Kimco Realty.png" alt="KIM_Kimco Realty.png">
+    <img src="KKR_KKR & Co..png" alt="KKR_KKR & Co..png">
+    <img src="KLAC_KLA Corporation.png" alt="KLAC_KLA Corporation.png">
+    <img src="KMB_Kimberly-Clark.png" alt="KMB_Kimberly-Clark.png">
+    <img src="KMI_Kinder Morgan.png" alt="KMI_Kinder Morgan.png">
+    <img src="KMX_CarMax.png" alt="KMX_CarMax.png">
+    <img src="KO_Coca-Cola Company (The).png" alt="KO_Coca-Cola Company (The).png">
+    <img src="KR_Kroger.png" alt="KR_Kroger.png">
+    <img src="KVUE_Kenvue.png" alt="KVUE_Kenvue.png">
+    <img src="K_Kellanova.png" alt="K_Kellanova.png">
+    <img src="LDOS_Leidos.png" alt="LDOS_Leidos.png">
+    <img src="LEN_Lennar.png" alt="LEN_Lennar.png">
+    <img src="LHX_L3Harris.png" alt="LHX_L3Harris.png">
+    <img src="LH_Labcorp.png" alt="LH_Labcorp.png">
+    <img src="LII_Lennox International.png" alt="LII_Lennox International.png">
+    <img src="LIN_Linde plc.png" alt="LIN_Linde plc.png">
+    <img src="LKQ_LKQ Corporation.png" alt="LKQ_LKQ Corporation.png">
+    <img src="LLY_Lilly (Eli).png" alt="LLY_Lilly (Eli).png">
+    <img src="LMT_Lockheed Martin.png" alt="LMT_Lockheed Martin.png">
+    <img src="LNT_Alliant Energy.png" alt="LNT_Alliant Energy.png">
+    <img src="LOW_Lowe's.png" alt="LOW_Lowe's.png">
+    <img src="LRCX_Lam Research.png" alt="LRCX_Lam Research.png">
+    <img src="LULU_Lululemon Athletica.png" alt="LULU_Lululemon Athletica.png">
+    <img src="LUV_Southwest Airlines.png" alt="LUV_Southwest Airlines.png">
+    <img src="LVS_Las Vegas Sands.png" alt="LVS_Las Vegas Sands.png">
+    <img src="LW_Lamb Weston.png" alt="LW_Lamb Weston.png">
+    <img src="LYB_LyondellBasell.png" alt="LYB_LyondellBasell.png">
+    <img src="LYV_Live Nation Entertainment.png" alt="LYV_Live Nation Entertainment.png">
+    <img src="L_Loews Corporation.png" alt="L_Loews Corporation.png">
+    <img src="MAA_Mid-America Apartment Communities.png" alt="MAA_Mid-America Apartment Communities.png">
+    <img src="MAR_Marriott International.png" alt="MAR_Marriott International.png">
+    <img src="MAS_Masco.png" alt="MAS_Masco.png">
+    <img src="MA_Mastercard.png" alt="MA_Mastercard.png">
+    <img src="MCD_McDonald's.png" alt="MCD_McDonald's.png">
+    <img src="MCHP_Microchip Technology.png" alt="MCHP_Microchip Technology.png">
+    <img src="MCK_McKesson Corporation.png" alt="MCK_McKesson Corporation.png">
+    <img src="MCO_Moody's Corporation.png" alt="MCO_Moody's Corporation.png">
+    <img src="MDLZ_Mondelez International.png" alt="MDLZ_Mondelez International.png">
+    <img src="MDT_Medtronic.png" alt="MDT_Medtronic.png">
+    <img src="META_Meta Platforms.png" alt="META_Meta Platforms.png">
+    <img src="MET_MetLife.png" alt="MET_MetLife.png">
+    <img src="MGM_MGM Resorts.png" alt="MGM_MGM Resorts.png">
+    <img src="MHK_Mohawk Industries.png" alt="MHK_Mohawk Industries.png">
+    <img src="MKC_McCormick & Company.png" alt="MKC_McCormick & Company.png">
+    <img src="MKTX_MarketAxess.png" alt="MKTX_MarketAxess.png">
+    <img src="MLM_Martin Marietta Materials.png" alt="MLM_Martin Marietta Materials.png">
+    <img src="MMC_Marsh McLennan.png" alt="MMC_Marsh McLennan.png">
+    <img src="MMM_3M.png" alt="MMM_3M.png">
+    <img src="MNST_Monster Beverage.png" alt="MNST_Monster Beverage.png">
+    <img src="MOH_Molina Healthcare.png" alt="MOH_Molina Healthcare.png">
+    <img src="MOS_Mosaic Company (The).png" alt="MOS_Mosaic Company (The).png">
+    <img src="MO_Altria.png" alt="MO_Altria.png">
+    <img src="MPC_Marathon Petroleum.png" alt="MPC_Marathon Petroleum.png">
+    <img src="MPWR_Monolithic Power Systems.png" alt="MPWR_Monolithic Power Systems.png">
+    <img src="MRK_Merck & Co..png" alt="MRK_Merck & Co..png">
+    <img src="MRNA_Moderna.png" alt="MRNA_Moderna.png">
+    <img src="MSCI_MSCI Inc..png" alt="MSCI_MSCI Inc..png">
+    <img src="MSFT_Microsoft.png" alt="MSFT_Microsoft.png">
+    <img src="MSI_Motorola Solutions.png" alt="MSI_Motorola Solutions.png">
+    <img src="MS_Morgan Stanley.png" alt="MS_Morgan Stanley.png">
+    <img src="MTB_M&T Bank.png" alt="MTB_M&T Bank.png">
+    <img src="MTCH_Match Group.png" alt="MTCH_Match Group.png">
+    <img src="MTD_Mettler Toledo.png" alt="MTD_Mettler Toledo.png">
+    <img src="MU_Micron Technology.png" alt="MU_Micron Technology.png">
+    <img src="NCLH_Norwegian Cruise Line Holdings.png" alt="NCLH_Norwegian Cruise Line Holdings.png">
+    <img src="NDAQ_Nasdaq, Inc..png" alt="NDAQ_Nasdaq, Inc..png">
+    <img src="NDSN_Nordson Corporation.png" alt="NDSN_Nordson Corporation.png">
+    <img src="NEE_NextEra Energy.png" alt="NEE_NextEra Energy.png">
+    <img src="NEM_Newmont.png" alt="NEM_Newmont.png">
+    <img src="NFLX_Netflix.png" alt="NFLX_Netflix.png">
+    <img src="NI_NiSource.png" alt="NI_NiSource.png">
+    <img src="NKE_Nike, Inc..png" alt="NKE_Nike, Inc..png">
+    <img src="NOC_Northrop Grumman.png" alt="NOC_Northrop Grumman.png">
+    <img src="NOW_ServiceNow.png" alt="NOW_ServiceNow.png">
+    <img src="NRG_NRG Energy.png" alt="NRG_NRG Energy.png">
+    <img src="NSC_Norfolk Southern.png" alt="NSC_Norfolk Southern.png">
+    <img src="NTAP_NetApp.png" alt="NTAP_NetApp.png">
+    <img src="NTRS_Northern Trust.png" alt="NTRS_Northern Trust.png">
+    <img src="NUE_Nucor.png" alt="NUE_Nucor.png">
+    <img src="NVDA_Nvidia.png" alt="NVDA_Nvidia.png">
+    <img src="NVR_NVR, Inc..png" alt="NVR_NVR, Inc..png">
+    <img src="NWSA_News Corp (Class A).png" alt="NWSA_News Corp (Class A).png">
+    <img src="NWS_News Corp (Class B).png" alt="NWS_News Corp (Class B).png">
+    <img src="NXPI_NXP Semiconductors.png" alt="NXPI_NXP Semiconductors.png">
+    <img src="ODFL_Old Dominion.png" alt="ODFL_Old Dominion.png">
+    <img src="OKE_Oneok.png" alt="OKE_Oneok.png">
+    <img src="OMC_Omnicom Group.png" alt="OMC_Omnicom Group.png">
+    <img src="ON_ON Semiconductor.png" alt="ON_ON Semiconductor.png">
+    <img src="ORCL_Oracle Corporation.png" alt="ORCL_Oracle Corporation.png">
+    <img src="ORLY_O’Reilly Automotive.png" alt="ORLY_O’Reilly Automotive.png">
+    <img src="OTIS_Otis Worldwide.png" alt="OTIS_Otis Worldwide.png">
+    <img src="OXY_Occidental Petroleum.png" alt="OXY_Occidental Petroleum.png">
+    <img src="O_Realty Income.png" alt="O_Realty Income.png">
+    <img src="PANW_Palo Alto Networks.png" alt="PANW_Palo Alto Networks.png">
+    <img src="PAYC_Paycom.png" alt="PAYC_Paycom.png">
+    <img src="PAYX_Paychex.png" alt="PAYX_Paychex.png">
+    <img src="PCAR_Paccar.png" alt="PCAR_Paccar.png">
+    <img src="PCG_PG&E Corporation.png" alt="PCG_PG&E Corporation.png">
+    <img src="PEG_Public Service Enterprise Group.png" alt="PEG_Public Service Enterprise Group.png">
+    <img src="PEP_PepsiCo.png" alt="PEP_PepsiCo.png">
+    <img src="PFE_Pfizer.png" alt="PFE_Pfizer.png">
+    <img src="PFG_Principal Financial Group.png" alt="PFG_Principal Financial Group.png">
+    <img src="PGR_Progressive Corporation.png" alt="PGR_Progressive Corporation.png">
+    <img src="PG_Procter & Gamble.png" alt="PG_Procter & Gamble.png">
+    <img src="PHM_PulteGroup.png" alt="PHM_PulteGroup.png">
+    <img src="PH_Parker Hannifin.png" alt="PH_Parker Hannifin.png">
+    <img src="PKG_Packaging Corporation of America.png" alt="PKG_Packaging Corporation of America.png">
+    <img src="PLD_Prologis.png" alt="PLD_Prologis.png">
+    <img src="PLTR_Palantir Technologies.png" alt="PLTR_Palantir Technologies.png">
+    <img src="PM_Philip Morris International.png" alt="PM_Philip Morris International.png">
+    <img src="PNC_PNC Financial Services.png" alt="PNC_PNC Financial Services.png">
+    <img src="PNR_Pentair.png" alt="PNR_Pentair.png">
+    <img src="PNW_Pinnacle West Capital.png" alt="PNW_Pinnacle West Capital.png">
+    <img src="PODD_Insulet Corporation.png" alt="PODD_Insulet Corporation.png">
+    <img src="POOL_Pool Corporation.png" alt="POOL_Pool Corporation.png">
+    <img src="PPG_PPG Industries.png" alt="PPG_PPG Industries.png">
+    <img src="PPL_PPL Corporation.png" alt="PPL_PPL Corporation.png">
+    <img src="PRU_Prudential Financial.png" alt="PRU_Prudential Financial.png">
+    <img src="PSA_Public Storage.png" alt="PSA_Public Storage.png">
+    <img src="PSKY_Paramount Skydance Corporation.png" alt="PSKY_Paramount Skydance Corporation.png">
+    <img src="PSX_Phillips 66.png" alt="PSX_Phillips 66.png">
+    <img src="PTC_PTC Inc..png" alt="PTC_PTC Inc..png">
+    <img src="PWR_Quanta Services.png" alt="PWR_Quanta Services.png">
+    <img src="PYPL_PayPal.png" alt="PYPL_PayPal.png">
+    <img src="QCOM_Qualcomm.png" alt="QCOM_Qualcomm.png">
+    <img src="RCL_Royal Caribbean Group.png" alt="RCL_Royal Caribbean Group.png">
+    <img src="REGN_Regeneron Pharmaceuticals.png" alt="REGN_Regeneron Pharmaceuticals.png">
+    <img src="REG_Regency Centers.png" alt="REG_Regency Centers.png">
+    <img src="RF_Regions Financial Corporation.png" alt="RF_Regions Financial Corporation.png">
+    <img src="RJF_Raymond James Financial.png" alt="RJF_Raymond James Financial.png">
+    <img src="RL_Ralph Lauren Corporation.png" alt="RL_Ralph Lauren Corporation.png">
+    <img src="RMD_ResMed.png" alt="RMD_ResMed.png">
+    <img src="ROK_Rockwell Automation.png" alt="ROK_Rockwell Automation.png">
+    <img src="ROL_Rollins, Inc..png" alt="ROL_Rollins, Inc..png">
+    <img src="ROP_Roper Technologies.png" alt="ROP_Roper Technologies.png">
+    <img src="ROST_Ross Stores.png" alt="ROST_Ross Stores.png">
+    <img src="RSG_Republic Services.png" alt="RSG_Republic Services.png">
+    <img src="RTX_RTX Corporation.png" alt="RTX_RTX Corporation.png">
+    <img src="RVTY_Revvity.png" alt="RVTY_Revvity.png">
+    <img src="SBAC_SBA Communications.png" alt="SBAC_SBA Communications.png">
+    <img src="SBUX_Starbucks.png" alt="SBUX_Starbucks.png">
+    <img src="SCHW_Charles Schwab Corporation.png" alt="SCHW_Charles Schwab Corporation.png">
+    <img src="SHW_Sherwin-Williams.png" alt="SHW_Sherwin-Williams.png">
+    <img src="SJM_J.M. Smucker Company (The).png" alt="SJM_J.M. Smucker Company (The).png">
+    <img src="SLB_Schlumberger.png" alt="SLB_Schlumberger.png">
+    <img src="SMCI_Supermicro.png" alt="SMCI_Supermicro.png">
+    <img src="SNA_Snap-on.png" alt="SNA_Snap-on.png">
+    <img src="SNPS_Synopsys.png" alt="SNPS_Synopsys.png">
+    <img src="SOLV_Solventum.png" alt="SOLV_Solventum.png">
+    <img src="SO_Southern Company.png" alt="SO_Southern Company.png">
+    <img src="SPGI_S&P Global.png" alt="SPGI_S&P Global.png">
+    <img src="SPG_Simon Property Group.png" alt="SPG_Simon Property Group.png">
+    <img src="SRE_Sempra.png" alt="SRE_Sempra.png">
+    <img src="STE_Steris.png" alt="STE_Steris.png">
+    <img src="STLD_Steel Dynamics.png" alt="STLD_Steel Dynamics.png">
+    <img src="STT_State Street Corporation.png" alt="STT_State Street Corporation.png">
+    <img src="STX_Seagate Technology.png" alt="STX_Seagate Technology.png">
+    <img src="STZ_Constellation Brands.png" alt="STZ_Constellation Brands.png">
+    <img src="SWKS_Skyworks Solutions.png" alt="SWKS_Skyworks Solutions.png">
+    <img src="SWK_Stanley Black & Decker.png" alt="SWK_Stanley Black & Decker.png">
+    <img src="SW_Smurfit Westrock.png" alt="SW_Smurfit Westrock.png">
+    <img src="SYF_Synchrony Financial.png" alt="SYF_Synchrony Financial.png">
+    <img src="SYK_Stryker Corporation.png" alt="SYK_Stryker Corporation.png">
+    <img src="SYY_Sysco.png" alt="SYY_Sysco.png">
+    <img src="TAP_Molson Coors Beverage Company.png" alt="TAP_Molson Coors Beverage Company.png">
+    <img src="TDG_TransDigm Group.png" alt="TDG_TransDigm Group.png">
+    <img src="TDY_Teledyne Technologies.png" alt="TDY_Teledyne Technologies.png">
+    <img src="TECH_Bio-Techne.png" alt="TECH_Bio-Techne.png">
+    <img src="TEL_TE Connectivity.png" alt="TEL_TE Connectivity.png">
+    <img src="TER_Teradyne.png" alt="TER_Teradyne.png">
+    <img src="TFC_Truist Financial.png" alt="TFC_Truist Financial.png">
+    <img src="TGT_Target Corporation.png" alt="TGT_Target Corporation.png">
+    <img src="TJX_TJX Companies.png" alt="TJX_TJX Companies.png">
+    <img src="TKO_TKO Group Holdings.png" alt="TKO_TKO Group Holdings.png">
+    <img src="TMO_Thermo Fisher Scientific.png" alt="TMO_Thermo Fisher Scientific.png">
+    <img src="TMUS_T-Mobile US.png" alt="TMUS_T-Mobile US.png">
+    <img src="TPL_Texas Pacific Land Corporation.png" alt="TPL_Texas Pacific Land Corporation.png">
+    <img src="TPR_Tapestry, Inc..png" alt="TPR_Tapestry, Inc..png">
+    <img src="TRGP_Targa Resources.png" alt="TRGP_Targa Resources.png">
+    <img src="TRMB_Trimble Inc..png" alt="TRMB_Trimble Inc..png">
+    <img src="TROW_T. Rowe Price.png" alt="TROW_T. Rowe Price.png">
+    <img src="TRV_Travelers Companies (The).png" alt="TRV_Travelers Companies (The).png">
+    <img src="TSCO_Tractor Supply.png" alt="TSCO_Tractor Supply.png">
+    <img src="TSLA_Tesla, Inc..png" alt="TSLA_Tesla, Inc..png">
+    <img src="TSN_Tyson Foods.png" alt="TSN_Tyson Foods.png">
+    <img src="TTD_Trade Desk (The).png" alt="TTD_Trade Desk (The).png">
+    <img src="TTWO_Take-Two Interactive.png" alt="TTWO_Take-Two Interactive.png">
+    <img src="TT_Trane Technologies.png" alt="TT_Trane Technologies.png">
+    <img src="TXN_Texas Instruments.png" alt="TXN_Texas Instruments.png">
+    <img src="TXT_Textron.png" alt="TXT_Textron.png">
+    <img src="TYL_Tyler Technologies.png" alt="TYL_Tyler Technologies.png">
+    <img src="T_AT&T.png" alt="T_AT&T.png">
+    <img src="UAL_United Airlines Holdings.png" alt="UAL_United Airlines Holdings.png">
+    <img src="UBER_Uber.png" alt="UBER_Uber.png">
+    <img src="UDR_UDR, Inc..png" alt="UDR_UDR, Inc..png">
+    <img src="UHS_Universal Health Services.png" alt="UHS_Universal Health Services.png">
+    <img src="ULTA_Ulta Beauty.png" alt="ULTA_Ulta Beauty.png">
+    <img src="UNH_UnitedHealth Group.png" alt="UNH_UnitedHealth Group.png">
+    <img src="UNP_Union Pacific Corporation.png" alt="UNP_Union Pacific Corporation.png">
+    <img src="UPS_United Parcel Service.png" alt="UPS_United Parcel Service.png">
+    <img src="URI_United Rentals.png" alt="URI_United Rentals.png">
+    <img src="USB_U.S. Bancorp.png" alt="USB_U.S. Bancorp.png">
+    <img src="VICI_Vici Properties.png" alt="VICI_Vici Properties.png">
+    <img src="VLO_Valero Energy.png" alt="VLO_Valero Energy.png">
+    <img src="VLTO_Veralto.png" alt="VLTO_Veralto.png">
+    <img src="VMC_Vulcan Materials Company.png" alt="VMC_Vulcan Materials Company.png">
+    <img src="VRSK_Verisk Analytics.png" alt="VRSK_Verisk Analytics.png">
+    <img src="VRSN_Verisign.png" alt="VRSN_Verisign.png">
+    <img src="VRTX_Vertex Pharmaceuticals.png" alt="VRTX_Vertex Pharmaceuticals.png">
+    <img src="VST_Vistra Corp..png" alt="VST_Vistra Corp..png">
+    <img src="VTRS_Viatris.png" alt="VTRS_Viatris.png">
+    <img src="VTR_Ventas.png" alt="VTR_Ventas.png">
+    <img src="VZ_Verizon.png" alt="VZ_Verizon.png">
+    <img src="V_Visa Inc..png" alt="V_Visa Inc..png">
+    <img src="WAB_Wabtec.png" alt="WAB_Wabtec.png">
+    <img src="WAT_Waters Corporation.png" alt="WAT_Waters Corporation.png">
+    <img src="WBA_Walgreens Boots Alliance.png" alt="WBA_Walgreens Boots Alliance.png">
+    <img src="WBD_Warner Bros. Discovery.png" alt="WBD_Warner Bros. Discovery.png">
+    <img src="WDAY_Workday, Inc..png" alt="WDAY_Workday, Inc..png">
+    <img src="WDC_Western Digital.png" alt="WDC_Western Digital.png">
+    <img src="WEC_WEC Energy Group.png" alt="WEC_WEC Energy Group.png">
+    <img src="WELL_Welltower.png" alt="WELL_Welltower.png">
+    <img src="WFC_Wells Fargo.png" alt="WFC_Wells Fargo.png">
+    <img src="WMB_Williams Companies.png" alt="WMB_Williams Companies.png">
+    <img src="WMT_Walmart.png" alt="WMT_Walmart.png">
+    <img src="WM_Waste Management.png" alt="WM_Waste Management.png">
+    <img src="WRB_W. R. Berkley Corporation.png" alt="WRB_W. R. Berkley Corporation.png">
+    <img src="WSM_Williams-Sonoma, Inc..png" alt="WSM_Williams-Sonoma, Inc..png">
+    <img src="WST_West Pharmaceutical Services.png" alt="WST_West Pharmaceutical Services.png">
+    <img src="WTW_Willis Towers Watson.png" alt="WTW_Willis Towers Watson.png">
+    <img src="WYNN_Wynn Resorts.png" alt="WYNN_Wynn Resorts.png">
+    <img src="WY_Weyerhaeuser.png" alt="WY_Weyerhaeuser.png">
+    <img src="XEL_Xcel Energy.png" alt="XEL_Xcel Energy.png">
+    <img src="XOM_ExxonMobil.png" alt="XOM_ExxonMobil.png">
+    <img src="XYL_Xylem Inc..png" alt="XYL_Xylem Inc..png">
+    <img src="XYZ_Block, Inc..png" alt="XYZ_Block, Inc..png">
+    <img src="YUM_Yum! Brands.png" alt="YUM_Yum! Brands.png">
+    <img src="ZBH_Zimmer Biomet.png" alt="ZBH_Zimmer Biomet.png">
+    <img src="ZBRA_Zebra Technologies.png" alt="ZBRA_Zebra Technologies.png">
+    <img src="ZTS_Zoetis.png" alt="ZTS_Zoetis.png">
   </div>
-
   <div class="lightbox" id="lightbox">
     <img id="lightbox-img" src="">
   </div>
-
   <script>
     const galleryImages = document.querySelectorAll(".gallery img");
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
-
     galleryImages.forEach(img => {
       img.addEventListener("click", () => {
         lightboxImg.src = img.src;
         lightbox.style.display = "flex";
       });
     });
-
-    lightbox.addEventListener("click", () => {
-      lightbox.style.display = "none";
-    });
+    lightbox.addEventListener("click", () => { lightbox.style.display = "none"; });
   </script>
 </body>
 </html>
